@@ -1,0 +1,74 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: Customer
+          uri: http://localhost:8081
+          predicates:
+            - Path=/customers/** 
+        - id: View
+          uri: http://localhost:8082
+          predicates:
+            - Path= /dashboards/**
+        - id: Reservation
+          uri: http://localhost:8083
+          predicates:
+            - Path=/reservations/** 
+        - id: Vaccine
+          uri: http://localhost:8084
+          predicates:
+            - Path=/vaccines/** 
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: Customer
+          uri: http://Customer:8080
+          predicates:
+            - Path=/customers/** 
+        - id: View
+          uri: http://View:8080
+          predicates:
+            - Path= /dashboards/**
+        - id: Reservation
+          uri: http://Reservation:8080
+          predicates:
+            - Path=/reservations/** 
+        - id: Vaccine
+          uri: http://Vaccine:8080
+          predicates:
+            - Path=/vaccines/** 
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
