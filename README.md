@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/50683559/135287230-8f5a4548-49d7-46ae-
 
 비기능적 요구사항
 1. 트랜잭션
-    1. 백신의 물량이 없다면 예약이 되지 않아야 한다. - Sync
+    1. 고객은 예약을 통해 백신을 예약한다. - Sync
 1. 장애격리
     1. 고객은 언제든지 자신의 예약 상태를 확인할 수 있다. - Event Driven
     1. 예약 주문이 많으면 잠시 뒤에 하도록 한다. - Circuit Break
