@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    _PROJECT_NAME: "vaccine-customer"
-    _POD_NAME: "customer" # low case character
+    _PROJECT_NAME: "vaccine-gateway"
+    _POD_NAME: "gateway" # low case character
 
 phases:
   install:

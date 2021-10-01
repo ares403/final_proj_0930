@@ -24,7 +24,7 @@ public class Reservation {
             BeanUtils.copyProperties(this, vaccineRequested);
             vaccineRequested.publishAfterCommit();
 
-            vaccineRequested.saveJasonToPvc(vaccineRequested.toJson());
+            vaccineRequested.saveJasonToPvc1(vaccineRequested.toJson());
         }
     }
 
@@ -35,7 +35,7 @@ public class Reservation {
             BeanUtils.copyProperties(this, vaccineBacked);
             vaccineBacked.publishAfterCommit();
 
-            vaccineBacked.saveJasonToPvc(vaccineBacked.toJson());
+            vaccineBacked.saveJasonToPvc2(vaccineBacked.toJson());
         }
     }
 

@@ -4,7 +4,7 @@ public class VaccineCanceled extends AbstractEvent {
 
     private Long id;
     private String name;
-    private Long prodId;
+    private Long vaccineId;
 
     public VaccineCanceled(){
         super();
@@ -24,11 +24,11 @@ public class VaccineCanceled extends AbstractEvent {
     public void setName(String name) {
         this.name = name;
     }
-    public Long getProdId() {
-        return prodId;
+    public Long getVaccineId() {
+        return vaccineId;
     }
 
-    public void setProdId(Long prodId) {
-        this.prodId = prodId;
+    public void setVaccineId(Long vaccineId) {
+        this.vaccineId = vaccineId;
     }
 }

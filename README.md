@@ -140,17 +140,17 @@ https://user-images.githubusercontent.com/50683559/135287230-8f5a4548-49d7-46ae-
 
 ### 액터, 커맨드 부착하여 읽기 좋게
 
-<img width="1426" alt="2021-09-13 9 28 38" src="https://user-images.githubusercontent.com/50683559/135305158-9c49d3d0-2d40-4d33-a7b9-a90133be4694.png">
+<img width="1426" alt="2021-09-13 9 28 38" src="https://user-images.githubusercontent.com/50683559/135449744-b42d25b8-b851-4d32-bc29-4f1baca80557.png">
 
 ### 어그리게잇으로 묶기
 
-<img width="1500" alt="2021-09-13 10 01 42" src="https://user-images.githubusercontent.com/50683559/135305191-2cdb57eb-6bc3-4179-a938-ce2c424bde9a.png">
+<img width="1500" alt="2021-09-13 10 01 42" src="https://user-images.githubusercontent.com/50683559/135449769-98eb4458-a5fe-4a60-8b79-18accea91865.png">
 
 - Customer의 예약과 취소, Reservation의 백신 요청과 원복, Vaccine의 백신 성공과 실패와 event 들에 의하여 트랜잭션이 유지되어야 하는 단위로 그들 끼리 묶어줌
 
 ### 바운디드 컨텍스트로 묶기
 
-<img width="1475" alt="2021-09-13 10 02 53" src="https://user-images.githubusercontent.com/50683559/135305214-258a6f76-1bc3-48a6-956a-0f1ebd78740c.png">
+<img width="1475" alt="2021-09-13 10 02 53" src="https://user-images.githubusercontent.com/50683559/135449796-d1df63c1-a1cf-41a3-b69c-4423994fdaa4.png">
 
     - 도메인 서열 분리 
       - Core Domain:  Reservation, Customer : 없어서는 안될 핵심 서비스이며, 연견 Up-time SLA 수준을 99.999% 목표, 배포주기는 의 경우 1주일 1회 미만
@@ -158,34 +158,34 @@ https://user-images.githubusercontent.com/50683559/135287230-8f5a4548-49d7-46ae-
 
 ### 폴리시 부착 (괄호는 수행주체, 전체 연계가 초기에 드러남)
 
-<img width="1551" alt="2021-09-13 10 47 23" src="https://user-images.githubusercontent.com/50683559/135305240-fc7675e4-dcfa-4dc0-9272-36e8ec7a0b01.png">
+<img width="1551" alt="2021-09-13 10 47 23" src="https://user-images.githubusercontent.com/50683559/135449827-37486d60-04eb-4e54-833a-4c1e18035c48.png">
 
 ### 폴리시의 이동과 컨텍스트 매핑 (점선은 Pub/Sub, 실선은 Req/Resp)
 
-<img width="1498" alt="2021-09-13 10 49 08" src="https://user-images.githubusercontent.com/50683559/135305274-cc585fc7-7d12-4614-a41a-31e9345b2342.png">
+<img width="1498" alt="2021-09-13 10 49 08" src="https://user-images.githubusercontent.com/50683559/135449865-6ee03441-3290-48c2-a5c3-9d719ad46cf6.png">
 
 ### 완성된 1차 모형
 
-<img width="1469" alt="2021-09-13 11 00 17" src="https://user-images.githubusercontent.com/50683559/135305301-d45e443e-7036-456d-90a9-6374629b3db5.png">
+<img width="1469" alt="2021-09-13 11 00 17" src="https://user-images.githubusercontent.com/50683559/135449896-1edbde74-ea95-4a5a-98ce-6e5e675544ef.png">
 
     - View Model 추가
 
 ### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
 
-<img width="1448" alt="2021-09-13 11 11 59" src="https://user-images.githubusercontent.com/50683559/135305334-b17b2c52-861d-4298-8ffe-d3c1b9ace8fc.png">
+<img width="1448" alt="2021-09-13 11 11 59" src="https://user-images.githubusercontent.com/50683559/135449951-ce81a497-bb32-4827-b08c-531fed66001b.png">
 
     - 고객은 백신을 예약한다. (ok)
     - 백신 물량을 확인한다. (ok)
     - 백신 물량이 있다면 백신이 예약된다. (ok) 
     - 백신이 예약되면 물량이 1개 줄어든다. (ok)
 
-<img width="1430" alt="2021-09-13 11 23 30" src="https://user-images.githubusercontent.com/50683559/135305364-7dba2a12-cbf9-4f06-8626-a81a60c6cd54.png">
+<img width="1430" alt="2021-09-13 11 23 30" src="https://user-images.githubusercontent.com/50683559/135449976-fe1d6126-c4e8-4ce0-b291-466ee1bdf1cc.png">
 
     - 고객은 백신을 예약한다. (ok)
     - 백신 물량을 확인한다. (ok)
     - 백신 물량이 없다면 백신이 예약되지 않는다. (ok)
 
-<img width="1430" alt="2021-09-13 11 16 05" src="https://user-images.githubusercontent.com/50683559/135305400-8d48ff6e-6efd-4d70-95d6-3e20ddf47a0e.png">
+<img width="1430" alt="2021-09-13 11 16 05" src="https://user-images.githubusercontent.com/50683559/135450013-00a20a1a-8be5-4184-a3f6-63ae9e25bef4.png">
 
     - 고객은 백신을 취소한다. (ok)
     - 취소한 백신에 해당하는 물량이 1개 늘어난다. (ok)
@@ -193,7 +193,7 @@ https://user-images.githubusercontent.com/50683559/135287230-8f5a4548-49d7-46ae-
 
 ### 비기능 요구사항에 대한 검증
 
-<img width="1430" alt="2021-09-13 11 33 01" src="https://user-images.githubusercontent.com/50683559/135305441-6ae7dceb-8330-4e2a-8657-bd79479727a0.png">
+<img width="1430" alt="2021-09-13 11 33 01" src="https://user-images.githubusercontent.com/50683559/135450052-6747b884-fb16-4309-9442-ee8efee704f3.png">
 
     - 마이크로 서비스를 넘나드는 시나리오에 대한 트랜잭션 처리
         - 백신 물량 확인:  ACID 트랜잭션 적용. 반드시 물량이 있어야지 예약이 가능하므로 Request-Response 방식 처리
@@ -203,7 +203,7 @@ https://user-images.githubusercontent.com/50683559/135287230-8f5a4548-49d7-46ae-
 
 ## 헥사고날 아키텍처 다이어그램 도출
     
-<img width="1481" alt="2021-09-13 11 51 17" src="https://user-images.githubusercontent.com/50683559/135305463-f741cd91-3dad-4e64-ab10-b21dbc94a5d3.png">
+<img width="1481" alt="2021-09-13 11 51 17" src="https://user-images.githubusercontent.com/50683559/135450078-6713c9ee-ce64-4600-80d7-a50245052268.png">
 
 
     - Chris Richardson, MSA Patterns 참고하여 Inbound adaptor와 Outbound adaptor를 구분함
@@ -213,7 +213,7 @@ https://user-images.githubusercontent.com/50683559/135287230-8f5a4548-49d7-46ae-
 
 # 구현:
 
-분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라, 각 BC별로 대변되는 마이크로 서비스들을 스프링부트로 구현하였다. 구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8080 ~ 8085 이다)
+분석/설계 단계에서 도출된 헥사고날 아키텍처에 따라, 각 BC별로 대변되는 마이크로 서비스들을 스프링부트로 구현하였다. 구현한 각 서비스를 로컬에서 실행하는 방법은 아래와 같다 (각자의 포트넘버는 8080 ~ 8084 이다)
 
 ```
 cd gateway
@@ -234,10 +234,9 @@ mvn spring-boot:run
 
 ## DDD 의 적용
 
-- 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다: (예시는 Customer 마이크로 서비스). 이때 가능한 현업에서 사용하는 언어(유비쿼터스 랭귀지)를 영어로 번역하여 사용하였다. 
+- 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다: (예시는 Reservation 마이크로 서비스). 이때 가능한 현업에서 사용하는 언어(유비쿼터스 랭귀지)를 영어로 번역하여 사용하였다. 
 
 ```
-
 package vaccine;
 
 import javax.persistence.*;
@@ -246,40 +245,37 @@ import java.util.List;
 import java.util.Date;
 
 @Entity
-@Table(name="Customer_table")
-public class Customer {
+@Table(name="Reservation_table")
+public class Reservation {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String name;
-    private Long vaccineId;
-    private String vaccineName;
     private String reserveStatus;
+    private Long customerId;
+    private Long vaccineId;
+    private String customerName;
 
     @PostPersist
-    public void onPostPersist(){
-        VaccineReserved vaccineReserved = new VaccineReserved();
-        BeanUtils.copyProperties(this, vaccineReserved);
-        vaccineReserved.publishAfterCommit();
+    public void onPostPersist() {
+        if (this.reserveStatus.equals("OK")) {
+            VaccineRequested vaccineRequested = new VaccineRequested();
+            BeanUtils.copyProperties(this, vaccineRequested);
+            vaccineRequested.publishAfterCommit();
 
-        vaccineReserved.saveJasonToPvc(vaccineReserved.toJson());
-
+            vaccineRequested.saveJasonToPvc(vaccineRequested.toJson());
+        }
     }
-    @PostRemove
-    public void onPostRemove(){
-        VaccineCanceled vaccineCanceled = new VaccineCanceled();
-        BeanUtils.copyProperties(this, vaccineCanceled);
-        vaccineCanceled.publishAfterCommit();
 
-        vaccineCanceled.saveJasonToPvc(vaccineCanceled.toJson());
+    @PostUpdate
+    public void onPostUpdate(){
+        if (this.reserveStatus.equals("NO")) {
+            VaccineBacked vaccineBacked = new VaccineBacked();
+            BeanUtils.copyProperties(this, vaccineBacked);
+            vaccineBacked.publishAfterCommit();
 
-    }
-    @PrePersist
-    public void onPrePersist(){
-    }
-    @PreRemove
-    public void onPreRemove(){
+            vaccineBacked.saveJasonToPvc(vaccineBacked.toJson());
+        }
     }
 
     public Long getId() {
@@ -289,12 +285,19 @@ public class Customer {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getReserveStatus() {
+        return reserveStatus;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setReserveStatus(String reserveStatus) {
+        this.reserveStatus = reserveStatus;
+    }
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
     public Long getVaccineId() {
         return vaccineId;
@@ -303,23 +306,13 @@ public class Customer {
     public void setVaccineId(Long vaccineId) {
         this.vaccineId = vaccineId;
     }
-    public String getVaccineName() {
-        return vaccineName;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setVaccineName(String vaccineName) {
-        this.vaccineName = vaccineName;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
-    public String getReserveStatus() {
-        return reserveStatus;
-    }
-
-    public void setReserveStatus(String reserveStatus) {
-        this.reserveStatus = reserveStatus;
-    }
-
-
-
 
 }
 
@@ -332,40 +325,31 @@ package vaccine;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel="customers", path="customers")
-public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long>{
+@RepositoryRestResource(collectionResourceRel="reservations", path="reservations")
+public interface ReservationRepository extends PagingAndSortingRepository<Reservation, Long>{
 
-    Customer findByVaccineId(Long vaccineId);
-
+    Reservation findByCustomerId(Long customerId);
+    
 }
 
 ```
-- 적용 후 REST API 의 테스트 (PostMan 기준)
+- 적용 후 REST API 의 테스트
 ```
 
-# Store 서비스의 입고 주문
-POST http://localhost:8083/product/order
-{
-    "productName": "Milk",
-    "productPrice": 1200,
-    "productQty": 2
-}
+# 고객과 백신 등록
+http POST localhost:8081/customers name="bs" vaccineId=1 reserveStatus="OK"
+http POST localhost:8083/vaccines name="xxx" qty=100 status="OK"
 
-# Store 입고 상태 확인
-GET http://localhost:8080/product/list
+# 확인
+http http://localhost:8081/customers/1
+http http://localhost:8083/vaccines/1
 
 
-# Reservation 서비스의 예약 주문
-POST http://localhost:8081/reservation/order
-{
-    "productId": 1,
-    "productName": "Milk",
-    "productPrice": 1200,
-    "customerId": 2,
-    "customerName": "Sam",
-    "customerPhone": "010-9837-0279",
-    "qty": 2
-}
+# 백신예약
+http POST http://localhost:8081/customer/reserve id=2 name="bs" vaccineId=1
+
+# 예약 확인
+http http://localhost:8082/reservations
 
 ```
 
@@ -443,23 +427,32 @@ View 서비스(dashboard)의 경우 다른 서비스와 다르게 HSQL DB를 사
 
 ## 동기식 호출 과 Fallback 처리
 
-분석단계에서의 조건 중 하나로 예약(reservation)->결제(pay) 간의 호출은 동기식 일관성을 유지하는 트랜잭션으로 처리하기로 하였다. 호출 프로토콜은 이미 앞서 Rest Repository 에 의해 노출되어있는 REST 서비스를 FeignClient 를 이용하여 호출하도록 한다. 
+분석단계에서의 조건 중 하나로 고객(customer)->예약(reservation) 간의 호출은 동기식 일관성을 유지하는 트랜잭션으로 처리하기로 하였다. 호출 프로토콜은 이미 앞서 Rest Repository 에 의해 노출되어있는 REST 서비스를 FeignClient 를 이용하여 호출하도록 한다. 
 
 - 결제 서비스를 호출하기 위하여 Stub과 (FeignClient) 를 이용하여 Service 대행 인터페이스 (Proxy) 를 구현 
 
 ```
 
-# (Reservation) 
+# (ReservationService.java) 
 
-package convenience.store.external;
+package vaccine.external;
 
-@FeignClient(name="pay", url="${api.url.pay}", fallback = PayHistoryServiceImpl.class)
-public interface PayHistoryService {
-	
-  @RequestMapping(method= RequestMethod.POST, path="/request")
-  public boolean request(@RequestBody PayHistory payHistory);
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@FeignClient(name="reservation", url="${api.url.reservation}", fallback = ReservationServiceImpl.class)
+public interface ReservationService {
+    @RequestMapping(method= RequestMethod.POST, path="/reserve")
+    public boolean reserve(@RequestBody Reservation reservation);
 
 }
+
+# applicaytion.yml
+api:
+  url:
+    reservation: http://localhost:8082/reservation
 
 ```
 
@@ -495,192 +488,90 @@ public interface PayHistoryService {
 
 
 ```
-# 결제 (Pay) 서비스를 잠시 내려놓음 (ctrl+c)
+# 예약 (Pay) 서비스 종료
 
 # 예약처리
-POST http://localhost:8081/reservation/order   #Fail
-{
-    "productId": 1,
-    "productName": "Milk",
-    "productPrice": 1200,
-    "customerId": 2,
-    "customerName": "Sam",
-    "customerPhone": "010-9837-0279",
-    "qty": 2
-}
 
-POST http://localhost:8081/reservation/order   #Fail
-{
-    "productId": 2,
-    "productName": "Snack",
-    "productPrice": 1500,
-    "customerId": 2,
-    "customerName": "Sam",
-    "customerPhone": "010-9837-0279",
-    "qty": 5
-}
+http POST http://localhost:8081/customer/reserve id=2 name="bs" vaccineId=1   #Fail
 
-
-#결제서비스 재기동
-cd Pay
-mvn spring-boot:run
+# 예약 (Pay) 서비스 재시작
 
 # 예약처리
-POST http://localhost:8081/reservation/order   #Success
-{
-    "productId": 1,
-    "productName": "Milk",
-    "productPrice": 1200,
-    "customerId": 2,
-    "customerName": "Sam",
-    "customerPhone": "010-9837-0279",
-    "qty": 2
-}
+http POST http://localhost:8081/customer/reserve id=2 name="bs" vaccineId=1   #Success
 
-POST http://localhost:8081/reservation/order   #Success
-{
-    "productId": 2,
-    "productName": "Snack",
-    "productPrice": 1500,
-    "customerId": 2,
-    "customerName": "Sam",
-    "customerPhone": "010-9837-0279",
-    "qty": 5
-}
 
 ```
 
 - 또한 과도한 예약 요청시에 서비스 장애가 도미노 처럼 벌어질 수 있다. (서킷브레이커, 폴백 처리는 운영단계에서 설명한다.)
 
 
-
-
 ## 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
 
-
-결제가 이루어진 후에 Store 서비스로 이를 알려주는 행위는 동기식이 아니라 비동기식으로 처리하여 Store 서비스의 처리를 위하여 결제가 블로킹 되지 않아도록 처리한다.
- 
-- 이를 위하여 결제 이력에 기록을 남긴 후에 곧바로 결제 요청이 되었다는 도메인 이벤트를 카프카로 송출한다. (Publish)
+예약이 이루어지면 백신에 비동기식으로 정보를 전달해주기로 했다
+- 이를 위하여 도메인 이벤트를 카프카로 송출한다. (Publish)
   이때 다른 저장 로직에 의해서 해당 이벤트가 발송되는 것을 방지하기 위해 Status 체크하는 로직을 추가했다.
  
 ```
 
-package convenience.store;
-
-@Entity
-@Table(name="payhistory_table")
-public class PayHistory {
-
-    ...
-
     @PostPersist
     public void onPostPersist() {
-      if(this.reserveStatus.equals("RESERVE")) {
-        PayRequested payRequested = new PayRequested();
-    	BeanUtils.copyProperties(this, payRequested);    		
-    	payRequested.publishAfterCommit();
+        if (this.reserveStatus.equals("OK")) {
+            VaccineRequested vaccineRequested = new VaccineRequested();
+            BeanUtils.copyProperties(this, vaccineRequested);
+            vaccineRequested.publishAfterCommit();
+    
+            vaccineRequested.saveJasonToPvc1(vaccineRequested.toJson());
+        }
+    }
 
-        payRequested.saveJasonToPvc(payRequested.toJson());
-
-      }
+    @PostUpdate
+    public void onPostUpdate(){
+        if (this.reserveStatus.equals("NO")) {
+            VaccineBacked vaccineBacked = new VaccineBacked();
+            BeanUtils.copyProperties(this, vaccineBacked);
+            vaccineBacked.publishAfterCommit();
+    
+            vaccineBacked.saveJasonToPvc2(vaccineBacked.toJson());
+        }
     }
 
 ```
-- 상점 서비스에서는 결제승인 이벤트에 대해서 이를 수신하여 자신의 정책을 처리하도록 PolicyHandler 를 구현한다:
+- 백신 서비스에서는 예약이 들어오면 백신의 갯수를 하나 줄이고 그 값이 0보다 크면 성공 작으면 실패로 상태를 업데이트 해준다.
 
 ```
 package convenience.store;
 
 ...
 
-@Service
-public class PolicyHandler {
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverVaccineRequested_CheckVaccine(@Payload VaccineRequested vaccineRequested){
 
-  ...
-  
-  @StreamListener(KafkaProcessor.INPUT)
-  public void wheneverPayRequested_Reserve(@Payload PayRequested payRequested){
+        if(!vaccineRequested.validate()) return;
 
-    if(!payRequested.validate()) return;
-    System.out.println("\n\n##### listener Reserve : " + payRequested.toJson() + "\n\n");
-        
-    StoreReservation storeReservation = new StoreReservation();
-    BeanUtils.copyProperties(payRequested, storeReservation);
-    storeReservationRepository.save(storeReservation);
-        
-    // 예약이 되면 상품의 보유 갯수를 줄여준다  
-    Product product = productRepository.findById(payRequested.getProductId()).orElseThrow(null);
-    product.setProductQty(product.getProductQty() - payRequested.getReserveQty());
-    productRepository.save(product);
-        
-  }
+        System.out.println("\n\n##### listener CheckVaccine : " + vaccineRequested.toJson() + "\n\n");
+
+        // Sample Logic //
+        Vaccine vaccine = vaccineRepository.findById(vaccineRequested.getVaccineId()).orElseThrow(null);
+        vaccine.setQty(vaccine.getQty()-1);
+
+        if(vaccine.getQty()>=0) {
+            vaccine.setStatus("OK");
+        }
+        else{
+            vaccine.setStatus("NO");
+        }
+        vaccineRepository.save(vaccine);
+
+    }
 
 ```
 실제 구현을 하자면, 결제가 완료된 이후에 카톡 알림을 통해 예약이 완료되었다는 외부 이벤트를 보내고, 점주는 예약 상태를 Dashboard를 통해 확인할 수 있다.
   
 ```
 
-# 결제 성공시 카톡 메세지 전송
-
-  @PostPersist
-  public void onPostPersist() {
-
-  convenience.store.external.PayHistory payHistory = new convenience.store.external.PayHistory();
-
-  boolean result = ReservationApplication.applicationContext.getBean(convenience.store.external.PayHistoryService.class).request(payHistory);
-
-  if(result) {
-    System.out.println("########## 결제가 완료되었습니다 ############");
-    // 결제 성공 카톡 메세지 발송
-  } else {
-    System.out.println("########## 결제가 실패하였습니다 ############");
-    // 결제 실패 카톡 메세지 발송
-  }    	
-
-}
-
 # 예약 현황을 Dashboard에서 확인
 
-GET http://localhost:8084/dashboard/list
-
-```
-
-Store 서비스는 예약/결제와 완전히 분리되어있으며, 이벤트 수신에 따라 처리되기 때문에, Store 서비스를 유지보수로 인해 잠시 내려간 상태라도 예약을 받는데 문제가 없다:
-```
-# Store 서비스 를 잠시 내려놓음 (ctrl+c)
-
-#예약처리
-POST http://localhost:8081/reservation/order   #Success
-{
-    "productId": 1,
-    "productName": "Milk",
-    "productPrice": 1200,
-    "customerId": 2,
-    "customerName": "Sam",
-    "customerPhone": "010-9837-0279",
-    "qty": 2
-}
-
-POST http://localhost:8081/reservation/order   #Success
-{
-    "productId": 2,
-    "productName": "Snack",
-    "productPrice": 1500,
-    "customerId": 2,
-    "customerName": "Sam",
-    "customerPhone": "010-9837-0279",
-    "qty": 5
-}
-
-#예약상태 확인
-GET http://localhost:8081/reservation/list     # 예약상태 조회 가능
-
-#상점 서비스 기동
-cd Store
-mvn spring-boot:run
-
-#주문상태 확인
-GET http://localhost:8083/product/list     # 상품의 갯수가 예약한 갯수만큼 줄어듬
+http http://localhost:8084/dashboards
 
 ```
 

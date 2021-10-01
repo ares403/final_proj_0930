@@ -1,6 +1,7 @@
 package vaccine;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,12 @@ import java.util.List;
 
   @Autowired
   ReservationRepository reservationRepository;
+
+  @GetMapping("/list")
+  public ResponseEntity<List<Reservation>> getReservationList() {
+   List<Reservation> reservations = (List<Reservation>) reservationRepository.findAll();
+   return ResponseEntity.ok(reservations);
+  }
 
   @PostMapping("/reserve")
   public boolean reserveVaccine(@RequestBody Reservation reservation){

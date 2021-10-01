@@ -30,8 +30,7 @@ public class Customer {
         //reservation.setReserveStatus("OK");
         reservation.setVaccineId(this.vaccineId);
 
-        boolean result = CustomerApplication.applicationContext.getBean(vaccine.external.ReservationService.class)
-            .reserve(reservation);
+        boolean result = CustomerApplication.applicationContext.getBean(vaccine.external.ReservationService.class).reserve(reservation);
 
         if(result) {
             System.out.println("########## 예약성공 ############");
@@ -40,10 +39,13 @@ public class Customer {
         }
 
         VaccineReserved vaccineReserved = new VaccineReserved();
-        BeanUtils.copyProperties(this, vaccineReserved);
+        vaccineReserved.setVaccineId(this.vaccineId);
+        vaccineReserved.setId(this.id);
+        vaccineReserved.setName(this.name);
+        //BeanUtils.copyProperties(this, vaccineReserved);
         vaccineReserved.publishAfterCommit();
 
-        vaccineReserved.saveJasonToPvc(vaccineReserved.toJson());
+        vaccineReserved.saveJasonToPvc1(vaccineReserved.toJson());
 
     }
 
@@ -51,10 +53,13 @@ public class Customer {
     public void onPostUpdate() {
         if (this.reserveStatus.equals("NO")) {
             VaccineCanceled vaccineCanceled = new VaccineCanceled();
-            BeanUtils.copyProperties(this, vaccineCanceled);
+            vaccineCanceled.setVaccineId(this.vaccineId);
+            vaccineCanceled.setId(this.id);
+            vaccineCanceled.setName(this.name);
+            //BeanUtils.copyProperties(this, vaccineCanceled);
             vaccineCanceled.publishAfterCommit();
 
-            vaccineCanceled.saveJasonToPvc(vaccineCanceled.toJson());
+            vaccineCanceled.saveJasonToPvc2(vaccineCanceled.toJson());
         }
     }
 
@@ -110,8 +115,5 @@ public class Customer {
     public void setReserveStatus(String reserveStatus) {
         this.reserveStatus = reserveStatus;
     }
-
-
-
 
 }

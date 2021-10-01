@@ -57,7 +57,7 @@ logging:
 
 api:
   url:
-    reservation: http://localhost:8084/reservation
+    reservation: http://localhost:8082/reservation
 
 server:
   port: 8081

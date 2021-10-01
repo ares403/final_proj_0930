@@ -59,14 +59,25 @@ public class AbstractEvent {
     }
 
     // PVC Test
-    public void saveJasonToPvc(String strJson){
+    public void saveJasonToPvc1(String strJson){
         File file;
 
-        if (strJson.equals("CANCEL")){
-            file = new File("/mnt/aws/reservationCancelled_json.txt");
-        }else{
-            file = new File("/mnt/aws/productReserved_json.txt");
+        file = new File("/mnt/aws/vaccineRequested_json.txt");
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write(strJson);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    // PVC Test
+    public void saveJasonToPvc2(String strJson){
+        File file;
+
+        file = new File("/mnt/aws/vaccineBacked_json.txt");
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
