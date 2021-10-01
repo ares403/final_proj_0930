@@ -29,7 +29,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - cd Reservation
+      - cd Customer
       - mvn package -Dmaven.test.skip=true
       - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$_PROJECT_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION  .
   post_build:
@@ -115,7 +115,7 @@ phases:
           apiVersion: autoscaling/v2beta2
           kind: HorizontalPodAutoscaler
           metadata:
-            name: reservation-hpa
+            name: customer-hpa
           spec:
             scaleTargetRef:
               apiVersion: apps/v1
