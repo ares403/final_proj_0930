@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    _PROJECT_NAME: "user05-customer"
+    _PROJECT_NAME: "vaccine-customer"
     _POD_NAME: "customer" # low case character
 
 phases:
